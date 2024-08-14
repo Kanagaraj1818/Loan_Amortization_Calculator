@@ -1,0 +1,26 @@
+
+    <div class="card">
+        <h5 class="card-header">Calculate Your Loan Amount</h5>
+        <div class="card-body navbar">
+            <form action="" [formGroup]="loanInputForm">
+                <label for="loanAmount">Loan Amount(in rupees)</label>
+                <input type="number" id="loanAmount" name="loanAmount" formControlName="loanAmount" class="form-control">
+                <span *ngIf="loanInputForm.controls['loanAmount'].invalid">Please enter a loan amount between Rs.20000 to 1crore.</span><br>
+                <label for="interestRate">Interest Rate(%)</label>
+                <input type="number" id="interestRate" name="interestRate" formControlName="interestRate" class="form-control">
+                <span *ngIf="loanInputForm.controls['interestRate'].invalid">Please enter an interest rate between 10% and 40%.</span><br>
+                <label for="loanTerm">Loan Term(in months)</label>
+                <input type="number" id="loanTerm" name="loanTerm" formControlName="loanTerm" class="form-control">
+                <span *ngIf="loanInputForm.controls['loanTerm'].invalid">Please enter a loan tenure between 12 and 78 months.</span><br>
+                <label for="startDate">Start date</label>
+                <input type="date" class="form-control" formControlName="startDate" id="startDate" name="startDate">
+                <span *ngIf="loanInputForm.controls['startDate'].invalid">Please enter a date between 2023 and 2024</span>
+                <br>
+                <button (click)="calculate()" class="btn ">Calculate</button>
+            </form>
+            <div *ngIf="monthlyPay">
+                <label for="value">Monthly Pay</label>
+                <input type="text" value="{{monthlyPay[0].payment}}" disabled="true">
+            </div>
+        </div>
+    </div>

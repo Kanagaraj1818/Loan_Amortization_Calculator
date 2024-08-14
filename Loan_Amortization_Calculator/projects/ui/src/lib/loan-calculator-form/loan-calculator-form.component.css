@@ -1,0 +1,15 @@
+.card{
+    padding: 3rem;
+    background-color: #e5eaf7;
+}
+.card-header,.card-body{
+    background-color: #FFFFFF;
+}
+span{
+    color: #B40000;
+    font-size: small;
+}
+button{
+    background-color: #FF6700;
+    color: #FFFFFF;
+}
