@@ -18,9 +18,10 @@
                 <br>
                 <button (click)="calculate()" class="btn ">Calculate</button>
             </form>
-            <div *ngIf="monthlyPay">
+            <div *ngIf="facade.Success$ | async as data">
                 <label for="value">Monthly Pay</label>
-                <input type="text" value="{{monthlyPay[0].payment}}" disabled="true">
+                <input type="text" value="{{data.schedule[0].payment}}" disabled="true">
+                <lib-chart-view [data]="data.schedule"></lib-chart-view>
             </div>
         </div>
     </div>

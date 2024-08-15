@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'lib-common-header',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './common-header.component.css'
 })
 export class CommonHeaderComponent {
-
+constructor(public router:Router){}
 }

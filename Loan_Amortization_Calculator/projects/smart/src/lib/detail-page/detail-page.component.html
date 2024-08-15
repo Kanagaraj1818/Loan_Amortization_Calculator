@@ -1,0 +1,26 @@
+<lib-common-header></lib-common-header>
+<div *ngIf="facade.Success$ | async as data" class="navbar">
+    
+    <lib-chart-view [data]="data.schedule"></lib-chart-view>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Month</th>
+            <th scope="col">Interest</th>
+            <th scope="col">Principal</th>
+            <th scope="col">Ending Balance</th>
+            <th scope="col">Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data.schedule">
+            <th scope="row">{{row.month}}</th>
+            <td>{{row.interest}}</td>
+            <td>{{row.principal}}</td>
+            <td>{{row.balance}}</td>
+            <td>{{row.payment}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<lib-common-footer></lib-common-footer>

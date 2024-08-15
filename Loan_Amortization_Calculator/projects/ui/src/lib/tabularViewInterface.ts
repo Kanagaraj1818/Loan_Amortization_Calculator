@@ -5,3 +5,13 @@ export interface AmortizationScheduleEntry {
     interest: number;
     balance: number;
 }
+export interface ContentState {
+    content?: Schedule;
+    loading?: boolean;
+    loaded?: boolean;
+    error?: Error;
+  }
+
+export interface Schedule{
+    schedule: AmortizationScheduleEntry[];
+}

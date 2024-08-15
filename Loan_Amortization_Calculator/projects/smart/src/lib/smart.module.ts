@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { SmartComponent } from './smart.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from '../state/data.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { dataCallEffects } from '../state/data.effects';
 
 
 
@@ -8,6 +12,8 @@ import { SmartComponent } from './smart.component';
     SmartComponent
   ],
   imports: [
+    StoreModule.forFeature('contentData',reducer),
+    EffectsModule.forFeature([dataCallEffects]),
   ],
   exports: [
     SmartComponent
